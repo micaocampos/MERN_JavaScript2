@@ -26,5 +26,16 @@ const pokemon = Object.freeze([
 
 const divisibles = pokemon.filter( p => p.id%3 === 0);
 console.log(divisibles);
-const tipoFuego=pokemon.filter(p=>p.types==="fire");
+const tipoFuego=pokemon.filter(p=>p.types[0]==="fire");
 console.log(tipoFuego);
+const masTipos=pokemon.filter(p=>p.types.length>1);
+console.log(masTipos);
+const nombres = pokemon.map( val => val.name );
+console.log(nombres);
+const venenosos = pokemon.filter(p=>p.types.length<=1 && p.types[0]==="poison").map( val => val.name );
+console.log(venenosos);
+const voladores = pokemon.filter(p=>p.types.length>=1 && p.types[1]==="flying").map( val => val.types[0] );
+console.log(voladores);
+const tipoNormal=(pokemon.filter(p=>p.types[0]==="normal")).length;
+console.log(tipoNormal);
+
